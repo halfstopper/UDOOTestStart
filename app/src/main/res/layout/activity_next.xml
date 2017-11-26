@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="xbee.udootest.NextActivity">
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sepal length"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="66dp" />
+
+    <EditText
+        android:id="@+id/plValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pl_value"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="215dp" />
+
+    <EditText
+        android:id="@+id/slValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sl_value"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="66dp" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Petal length"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="215dp" />
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Petal width"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="293dp" />
+
+    <EditText
+        android:id="@+id/pwValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="pw_value"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="293dp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Sepal width"
+        tools:layout_editor_absoluteX="33dp"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <EditText
+        android:id="@+id/swValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="sw_value"
+        tools:layout_editor_absoluteX="147dp"
+        tools:layout_editor_absoluteY="140dp" />
+
+    <Button
+        android:id="@+id/train"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Train"
+        tools:layout_editor_absoluteX="57dp"
+        tools:layout_editor_absoluteY="373dp" />
+
+    <Button
+        android:id="@+id/classify"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Classify"
+        tools:layout_editor_absoluteX="183dp"
+        tools:layout_editor_absoluteY="373dp" />
+</android.support.constraint.ConstraintLayout>
