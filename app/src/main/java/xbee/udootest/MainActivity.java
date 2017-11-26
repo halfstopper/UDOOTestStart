@@ -38,7 +38,7 @@ import wlsvm.WLSVM;
 
 import static android.R.attr.onClick;
 
-
+//Update 3
 public class MainActivity extends Activity {
 
 // private static final String TAG = "UDOO_AndroidADKFULL";
