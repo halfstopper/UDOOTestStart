@@ -1,4 +1,3 @@
-//Updated
 package xbee.udootest;
 
 import android.app.Activity;
@@ -57,7 +56,7 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         File root = Environment.getExternalStoragePublicDirectory(Environment.DIRECTORY_DOWNLOADS);
-        File f = new File(root, "training.arff");
+        File f = new File(root, "iris_train.arff");
         BufferedReader inputReader;
         inputReader = readFile(f);
 
@@ -175,18 +174,18 @@ public class MainActivity extends Activity {
             try{
                 Double d = (double) pulseRate;
                 Double e = (double) oxygenLvl;
-                Double f = (double) pos;
-                Attribute Attribute1 = new Attribute("distance");
-                Attribute Attribute2 = new Attribute("pulse");
-                Attribute Attribute3 = new Attribute("position");
+                //Double f = (double) pos;
+                Attribute Attribute1 = new Attribute("pulseRate");
+                Attribute Attribute2 = new Attribute("oxygenLvl");
+                //Attribute Attribute3 = new Attribute("position");
                 FastVector fvClassVal = new FastVector(2);
-                fvClassVal.addElement("stress");
                 fvClassVal.addElement("relax");
+                fvClassVal.addElement("stress");
                 Attribute ClassAttribute = new Attribute("class", fvClassVal);
                 FastVector fvWekaAttributes = new FastVector(5);
                 fvWekaAttributes.addElement(Attribute1);
                 fvWekaAttributes.addElement(Attribute2);
-                fvWekaAttributes.addElement(Attribute3);
+                //fvWekaAttributes.addElement(Attribute3);
                 fvWekaAttributes.addElement(ClassAttribute);
                 Instances testingSet = new Instances("TestingInstance", fvWekaAttributes, 1);
                 testingSet.setClassIndex(testingSet.numAttributes() - 1);
@@ -195,8 +194,9 @@ public class MainActivity extends Activity {
 
                 iExample.setValue((Attribute) fvWekaAttributes.elementAt(0), d);
                 iExample.setValue((Attribute) fvWekaAttributes.elementAt(1), e);
-                iExample.setValue((Attribute) fvWekaAttributes.elementAt(2), f);
-                iExample.setValue((Attribute) fvWekaAttributes.elementAt(3), "stress");
+                //iExample.setValue((Attribute) fvWekaAttributes.elementAt(2), f);
+                iExample.setValue((Attribute) fvWekaAttributes.elementAt(2), "relax");
+                //iExample.setValue((Attribute) fvWekaAttributes.elementAt(3), "relax");
 
 // add the instance.. so
                 testingSet.add(iExample);
@@ -205,8 +205,8 @@ public class MainActivity extends Activity {
 
                     Toast.makeText(getApplicationContext(), "after classify: " + ans, Toast.LENGTH_LONG).show();
 
-                    if(ans==0.0){resulttext.setText("stress");}
-                    else{resulttext.setText("rest");}
+                    if(ans==0.0){resulttext.setText("rest");}
+                    else{resulttext.setText("stress");}
                 }
                 catch (Exception e1) {}
             }
@@ -214,7 +214,7 @@ public class MainActivity extends Activity {
 //            DecimalFormat df = new DecimalFormat("#.#");
             distance.setText(pulseRate + " (bpm)");
             pulse.setText(oxygenLvl + " (pct)");
-            position.setText(pos + "");
+            //position.setText(pos + "");
         }
     }
 }
